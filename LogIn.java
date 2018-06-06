@@ -84,7 +84,13 @@ public class LogIn {
 		btnLogIn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				//#TODO set action for the Log In button 
-				
+				try {
+					LoginWithCredentials c = new LoginWithCredentials();					
+					c.getLoginWindowWCred().setVisible(true);
+					frmWorkoutTracker.setVisible(false);
+				} catch (Exception e1) {
+					e1.printStackTrace();
+				}
 			}
 		});
 		frmWorkoutTracker.getContentPane().add(btnLogIn);
@@ -92,7 +98,6 @@ public class LogIn {
 		JButton btnCreateAnAccount = new JButton("Create an Account");
 		btnCreateAnAccount.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				//#TODO set action for the create an account button
 				try {
 					CreateAccount c = new CreateAccount();
 					c.getCreateAccountWindow().setVisible(true);
